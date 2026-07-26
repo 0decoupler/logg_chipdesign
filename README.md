@@ -115,4 +115,6 @@ Sequential blocks
 - [ ] Run `vga.hex` (628,000 cycles, 1-2 hours) and get the OSOC logo on screen
 - [ ] Write up why Logisim doesn't scale: design effort, simulation speed, debuggability
 
+![Information Box Description](../assets/sav.png)
+
 Let's get to the grind)
