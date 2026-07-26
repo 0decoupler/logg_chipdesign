@@ -24,7 +24,8 @@ Public log of my self-study in chip design.
 
 | Day | Date | Stage | Topic | Output |
 |-----|------|-------|-------|--------|
-| 001 | 2026-07-26 | F1, F2 | How to Ask Smart Questions & Installing and Using Logisim | pending... |
+| 001 | 2026-07-26 | F1, F2 | How to Ask Smart Questions & Installing and Using Logisim | ✅ |
+| 002 | 2026-07-27 | F3 | The basics of digital and logic circuits | ♿️ |
 
 ## Roadmap
 
@@ -33,16 +34,18 @@ Roadmap - "One Student, One Chip" (ysyx), F Stage
 Handouts: https://ysyx.oscc.cc/docs/en/2407/f/1.html
 
 ### [F1 - How to Ask Smart Questions](https://ysyx.oscc.cc/docs/en/2407/f/1.html)
-- [ ] Read "How To Ask Questions The Smart Way" (ESR)
-- [ ] Work out what STFW, RTFM, RTFSC stand for and when each applies
-- [ ] Start the course learning log and keep it current
-- [ ] Adopt the rule: try to solve it alone first, ask only after the attempt is documented
+- [x] Read "How To Ask Questions The Smart Way" (ESR)
+- [x] Work out what STFW, RTFM, RTFSC stand for and when each applies
+- [x] Start the course learning log and keep it current
+- [x] Adopt the rule: try to solve it alone first, ask only after the attempt is documented
 
 ### [F2 - Installing and Using Logisim](https://ysyx.oscc.cc/docs/en/2407/f/2.html)
-- [ ] Install Logisim and get a blank circuit simulating
-- [ ] Component library: Wiring, Gates, Plexers, Arithmetic, Memory, Input/Output
-- [ ] Wiring, bit width config, Splitter, Probe, Constant, Clock, button-as-clock
-- [ ] Subcircuits: build once, instantiate everywhere
+- [x] Install Logisim and get a blank circuit simulating
+- [x] Component library: Wiring, Gates, Plexers, Arithmetic, Memory, Input/Output
+- [ ] Wiring, bit width config, Splitter, Probe, Constant, Clock, button-as-clock (_additional stuff_)
+- [x] UI familiarization
+- [x] XOR gate simple circuit out of inverter and AND gates
+- [x] Simple D Flip-flop changing state observation, with auto-propagation disabled
 
 ### [F3 - Basics of Digital and Logic Circuits](https://ysyx.oscc.cc/docs/en/2407/f/3.html)
 Transistors and gates
