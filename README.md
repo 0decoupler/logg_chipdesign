@@ -49,7 +49,7 @@ Handouts: https://ysyx.oscc.cc/docs/en/2407/f/1.html
 
 ### [F3 - Basics of Digital and Logic Circuits](https://ysyx.oscc.cc/docs/en/2407/f/3.html)
 Transistors and gates
-- [ ] nMOS/pMOS as voltage-controlled switches, CMOS complementary pairs
+- [x] nMOS/pMOS as voltage-controlled switches, CMOS complementary pairs
 - [ ] NOT, NAND, AND, 3-input NAND, XOR, XNOR from transistors and from gates
 - [ ] Transistor-count comparison: fully custom vs standard-cell (semi-custom)
 - [ ] Truth table -> logical expression (skip Karnaugh maps, the course says they don't scale)
