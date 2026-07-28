@@ -26,7 +26,8 @@ Public log of my self-study in chip design.
 |-----|------|-------|-------|--------|
 | 001 | 2026-07-26 | F1, F2 | How to Ask Smart Questions & Installing and Using Logisim | ✅ |
 | 002 | 2026-07-27 | F3 | The basics of digital and logic circuits -> OR gate exercise | ✅ |
-| 003 | 2026-07-28 | F3 | Three-input NAND gate ▶ | ♿️ |
+| 003 | 2026-07-28 | F3 | Three-input NAND gate ▶ XNOR gate | ✅ |
+| 004 | 2026-07-29 | F3 | XNOR gate -> | ♿️ |
 
 ## Roadmap
 
@@ -51,7 +52,7 @@ Handouts: https://ysyx.oscc.cc/docs/en/2407/f/1.html
 ### [F3 - Basics of Digital and Logic Circuits](https://ysyx.oscc.cc/docs/en/2407/f/3.html)
 Transistors and gates
 - [x] nMOS/pMOS as voltage-controlled switches, CMOS complementary pairs
-- [ ] NOT, NAND, AND, 3-input NAND, XOR, XNOR from transistors and from gates
+- [x] NOT, NAND, AND, 3-input NAND, XOR, XNOR from transistors and from gates
 - [ ] Transistor-count comparison: fully custom vs standard-cell (semi-custom)
 - [ ] Truth table -> logical expression (skip Karnaugh maps, the course says they don't scale)
 
