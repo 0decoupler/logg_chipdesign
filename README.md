@@ -25,7 +25,8 @@ Public log of my self-study in chip design.
 | Day | Date | Stage | Topic | Output |
 |-----|------|-------|-------|--------|
 | 001 | 2026-07-26 | F1, F2 | How to Ask Smart Questions & Installing and Using Logisim | ✅ |
-| 002 | 2026-07-27 | F3 | The basics of digital and logic circuits | ♿️ |
+| 002 | 2026-07-27 | F3 | The basics of digital and logic circuits -> OR gate exercise | ✅ |
+| 003 | 2026-07-28 | F3 | Three-input NAND gate ▶ | ♿️ |
 
 ## Roadmap
 
