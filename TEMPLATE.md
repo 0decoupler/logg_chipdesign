@@ -6,9 +6,6 @@
 
 ---
 
-## Goal
-<!-- One sentence. What did I want to be able to do by the end of today? -->
-
 ## Notes
 
 ### Concepts
@@ -18,9 +15,6 @@
 
 ### Diagram / waveform
 <!-- Paste an image, ASCII schematic, or link to assets/day000-*.png -->
-
-```
-```
 
 ## Truth table / expression
 <!-- Derive it here before wiring anything. Wiring first is how i lose an evening. -->
@@ -40,7 +34,3 @@ A B | Y
 | Symptom | Cause | Fix |
 |---------|-------|-----|
 | | | |
-
-## Open questions
-<!-- Things I could not explain to someone else yet. Carry these forward. -->
-- [ ]

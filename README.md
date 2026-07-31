@@ -27,7 +27,9 @@ Public log of my self-study in chip design.
 | 001 | 2026-07-26 | F1, F2 | How to Ask Smart Questions & Installing and Using Logisim | ✅ |
 | 002 | 2026-07-27 | F3 | The basics of digital and logic circuits -> OR gate exercise | ✅ |
 | 003 | 2026-07-28 | F3 | Three-input NAND gate ▶ XNOR gate | ✅ |
-| 004 | 2026-07-29 | F3 | XNOR gate -> | ♿️ |
+| 004 | 2026-07-29 | F3 | XNOR gate -> refreshed theory about the transistors and the potentials around them (analyzing custom XOR gate) | 🫠 |
+| 005 | 2026-07-30 | F3 | Tried building customized XNOR gate with CMOS | 😭 |
+| 006 | 2026-07-31 | F3 | Moving on for now | ♿️ |
 
 ## Roadmap
 
