@@ -29,7 +29,9 @@ Public log of my self-study in chip design.
 | 003 | 2026-07-28 | F3 | Three-input NAND gate ▶ XNOR gate | ✅ |
 | 004 | 2026-07-29 | F3 | XNOR gate -> refreshed theory about the transistors and the potentials around them (analyzing custom XOR gate) | 🫠 |
 | 005 | 2026-07-30 | F3 | Tried building customized XNOR gate with CMOS | 😭 |
-| 006 | 2026-07-31 | F3 | Moving on for now | ♿️ |
+| 006 | 2026-07-31 | F3 | Moving on for now -> tried 3-8 decoder | ♿️ |
+| 007 | 2026-08-01 | F3 | had quite of a break + watched a youtube video titled "The Most Ambigious Concept in Computer Architecture" | 🤕 |
+| 008 | 2026-08-02 | F3 | Lock in? + built the 3-8 decoder, suiii | ⏩️ | 
 
 ## Roadmap
 
