@@ -221,6 +221,18 @@
       <a name="facing" val="east"/>
       <a name="number" val="15"/>
     </comp>
+    <comp lib="9" loc="(1030,866)" name="Text">
+      <a name="font" val="SansSerif bold 32"/>
+      <a name="text" val="mapping"/>
+    </comp>
+    <comp lib="9" loc="(313,766)" name="Text">
+      <a name="font" val="SansSerif bold 32"/>
+      <a name="text" val="16-4 Encoder"/>
+    </comp>
+    <comp lib="9" loc="(683,900)" name="Text">
+      <a name="font" val="SansSerif bold 32"/>
+      <a name="text" val="4-16 decoder"/>
+    </comp>
     <comp lib="9" loc="(715,265)" name="Text">
       <a name="text" val="3"/>
     </comp>
