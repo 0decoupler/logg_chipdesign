@@ -65,12 +65,15 @@
     <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(340,280)" name="Pin">
       <a name="appearance" val="NewPins"/>
+      <a name="label" val="S"/>
     </comp>
     <comp lib="0" loc="(360,200)" name="Pin">
       <a name="appearance" val="NewPins"/>
+      <a name="label" val="D0"/>
     </comp>
     <comp lib="0" loc="(360,340)" name="Pin">
       <a name="appearance" val="NewPins"/>
+      <a name="label" val="D1"/>
     </comp>
     <comp lib="0" loc="(500,280)" name="Pin">
       <a name="appearance" val="NewPins"/>
@@ -101,5 +104,11 @@
     <wire from="(440,270)" to="(470,270)"/>
     <wire from="(440,290)" to="(440,330)"/>
     <wire from="(440,290)" to="(470,290)"/>
+  </circuit>
+  <circuit name="bit1_2_1selector">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="bit1_2_1selector"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
   </circuit>
 </project>
