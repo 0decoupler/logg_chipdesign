@@ -1,0 +1,7 @@
+D WE | Q
+0 0  | Keeps
+0 1  | Keeps on 1 0
+1 1  | Changes
+0 1  | Changes on 1 1
+1 0  | Keeps
+

@@ -1,0 +1,7 @@
+S R | Q Q'
+0 0 | Stops
+0 1 | 0 1
+1 0 | 1 0
+1 1 | Keeps
+
+Inverted to the NOR version, though oscillate differently on 00 and 11
