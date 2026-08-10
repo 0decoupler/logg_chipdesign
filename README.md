@@ -32,6 +32,7 @@ Public log of my self-study in chip design.
 | 006 | 2026-07-31 | F3 | Moving on for now -> tried 3-8 decoder | ♿️ |
 | 007 | 2026-08-01 | F3 | had quite of a break + watched a youtube video titled "The Most Ambigious Concept in Computer Architecture" | 🤕 |
 | 008 | 2026-08-02 | F3 | Lock in? + built the 3-8 decoder, suiii | ⏩️ | 
+| will edit some time | - | - | - | - |
 
 ## Roadmap
 
@@ -48,7 +49,7 @@ Handouts: https://ysyx.oscc.cc/docs/en/2407/f/1.html
 ### [F2 - Installing and Using Logisim](https://ysyx.oscc.cc/docs/en/2407/f/2.html)
 - [x] Install Logisim and get a blank circuit simulating
 - [x] Component library: Wiring, Gates, Plexers, Arithmetic, Memory, Input/Output
-- [ ] Wiring, bit width config, Splitter, Probe, Constant, Clock, button-as-clock (_additional stuff_)
+- [x] Wiring, bit width config, Splitter, Probe, Constant, Clock, button-as-clock (_additional stuff_)
 - [x] UI familiarization
 - [x] XOR gate simple circuit out of inverter and AND gates
 - [x] Simple D Flip-flop changing state observation, with auto-propagation disabled
@@ -57,28 +58,28 @@ Handouts: https://ysyx.oscc.cc/docs/en/2407/f/1.html
 Transistors and gates
 - [x] nMOS/pMOS as voltage-controlled switches, CMOS complementary pairs
 - [x] NOT, NAND, AND, 3-input NAND, XOR, XNOR from transistors and from gates
-- [ ] Transistor-count comparison: fully custom vs standard-cell (semi-custom)
-- [ ] Truth table -> logical expression (skip Karnaugh maps, the course says they don't scale)
+- [x] Transistor-count comparison: fully custom vs standard-cell (semi-custom)
+- [x] Truth table -> logical expression (skip Karnaugh maps, the course says they don't scale)
 
 Number representation
-- [ ] Binary and hex encoding, short division, 4-bit grouping
-- [ ] Sign-and-magnitude, one's complement, two's complement
-- [ ] Why two's complement lets one RCA do both addition and subtraction
+- [x] Binary and hex encoding, short division, 4-bit grouping
+- [x] Sign-and-magnitude, one's complement, two's complement
+- [x] Why two's complement lets one RCA do both addition and subtraction
 - [ ] Overflow detection from sign bits and carry
 
 Combinational blocks (build each in Logisim, gates only)
-- [ ] 2-4 decoder, extend to 3-8; seven-segment decoder (decimal, then hex)
-- [ ] 16-4 encoder; 4-2 priority encoder, extend to 16-4; leading/trailing zero counting
-- [ ] 1-bit 2-to-1 mux, 3-bit 4-to-1 mux
-- [ ] 4-bit comparator
-- [ ] Half adder, full adder, 4-bit ripple-carry adder, 4-bit subtractor
-- [ ] Sign-magnitude adder, complement adder
+- [x] 2-4 decoder, extend to 3-8; seven-segment decoder (decimal, then hex)
+- [x] 16-4 encoder; 4-2 priority encoder, extend to 16-4; leading/trailing zero counting
+- [x] 1-bit 2-to-1 mux, 3-bit 4-to-1 mux
+- [x] 4-bit comparator
+- [x] Half adder, full adder, 4-bit ripple-carry adder, 4-bit subtractor
+- [x] Sign-magnitude adder, complement adder
 
 Sequential blocks
 - [ ] Cross-coupled inverters, metastability
-- [ ] SR latch (NOR and NAND versions), D latch, D latch with reset
-- [ ] Why level-triggered latches break synchronous design
-- [ ] Master-slave D flip-flop, falling-edge version, enable pin, reset
+- [x] SR latch (NOR and NAND versions), D latch, D latch with reset
+- [x] Why level-triggered latches break synchronous design
+- [x] Master-slave D flip-flop, falling-edge version, enable pin, reset
 - [ ] 4-bit register, 4-bit counter, sequence-sum circuit for 1+2+...+10, electronic clock
 
 ### [F4 - State Machine Model of Computer Systems](https://ysyx.oscc.cc/docs/en/2407/f/4.html)
