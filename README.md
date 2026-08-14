@@ -83,13 +83,13 @@ Sequential blocks
 - [ ] 4-bit register, 4-bit counter, sequence-sum circuit for 1+2+...+10, electronic clock
 
 ### [F4 - State Machine Model of Computer Systems](https://ysyx.oscc.cc/docs/en/2407/f/4.html)
-- [ ] Instruction format: opcode vs operand fields; GPR, PC
-- [ ] sISA: `add`, `li`, `bner0` encodings; hand-assemble to machine code
-- [ ] Stored-program model: fetch -> execute -> update PC
-- [ ] Trace `1+2+...+10` by hand as `(PC, r0, r1, r2, r3)` state transitions
-- [ ] State machine formalism: state set, event set, transition rules, initial state
-- [ ] The same model applied to: ISA, C programs, digital circuits (Johnson counter)
-- [ ] C basics: `main`, variables, statements, `printf`, `do-while`; run in Compiler Explorer
+- [x] Instruction format: opcode vs operand fields; GPR, PC
+- [x] sISA: `add`, `li`, `bner0` encodings; hand-assemble to machine code
+- [x] Stored-program model: fetch -> execute -> update PC
+- [x] Trace `1+2+...+10` by hand as `(PC, r0, r1, r2, r3)` state transitions
+- [x] State machine formalism: state set, event set, transition rules, initial state
+- [x] The same model applied to: ISA, C programs, digital circuits (Johnson counter)
+- [x] C basics: `main`, variables, statements, `printf`, `do-while`; run in Compiler Explorer
 - [ ] Compilation = mapping the C state machine onto the ISA state machine
 - [ ] CPU design = mapping the ISA state machine onto a circuit state machine
 
