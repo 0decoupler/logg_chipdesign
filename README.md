@@ -90,17 +90,17 @@ Sequential blocks
 - [x] State machine formalism: state set, event set, transition rules, initial state
 - [x] The same model applied to: ISA, C programs, digital circuits (Johnson counter)
 - [x] C basics: `main`, variables, statements, `printf`, `do-while`; run in Compiler Explorer
-- [ ] Compilation = mapping the C state machine onto the ISA state machine
-- [ ] CPU design = mapping the ISA state machine onto a circuit state machine
+- [x] Compilation = mapping the C state machine onto the ISA state machine
+- [x] CPU design = mapping the ISA state machine onto a circuit state machine
 
 ### [F5 - Simple Processor Supporting Sequence Summation (sCPU)](https://ysyx.oscc.cc/docs/en/2407/f/5.html)
-- [ ] Instruction cycle: fetch, decode, execute, update PC
-- [ ] ROM structure: address decoder, word lines, bit lines; ROM as a mux with constant inputs
-- [ ] Build the fetch path: PC register + ROM holding the summation program
-- [ ] RAM structure: read path, write path, `EN`, single-port vs multi-port
-- [ ] Build GPR as RAM; add two read ports plus one write port (`raddr1/2`, `rdata1/2`, `waddr`, `wdata`, `wen`, `clk`)
-- [ ] sCPU supporting only `li`
-- [ ] Add `add`: instruction decoder from opcode, mux on `wdata`
+- [x] Instruction cycle: fetch, decode, execute, update PC
+- [x] ROM structure: address decoder, word lines, bit lines; ROM as a mux with constant inputs
+- [x] Build the fetch path: PC register + ROM holding the summation program
+- [x] RAM structure: read path, write path, `EN`, single-port vs multi-port
+- [x] Build GPR as RAM; add two read ports plus one write port (`raddr1/2`, `rdata1/2`, `waddr`, `wdata`, `wen`, `clk`)
+- [x] sCPU supporting only `li`
+- [x] Add `add`: instruction decoder from opcode, mux on `wdata`
 - [ ] Add `bner0`: comparator, mux on PC input, `wen` deasserted
 - [ ] Run the full program - expect PC = 7 and 55 in a GPR
 - [ ] Write the sum-of-odds program and run it
