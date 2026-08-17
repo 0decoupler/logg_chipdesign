@@ -101,10 +101,10 @@ Sequential blocks
 - [x] Build GPR as RAM; add two read ports plus one write port (`raddr1/2`, `rdata1/2`, `waddr`, `wdata`, `wen`, `clk`)
 - [x] sCPU supporting only `li`
 - [x] Add `add`: instruction decoder from opcode, mux on `wdata`
-- [ ] Add `bner0`: comparator, mux on PC input, `wen` deasserted
-- [ ] Run the full program - expect PC = 7 and 55 in a GPR
-- [ ] Write the sum-of-odds program and run it
-- [ ] Add a custom `out rs` instruction driving a seven-segment display
+- [x] Add `bner0`: comparator, mux on PC input, `wen` deasserted
+- [x] Run the full program - expect PC = 7 and 55 in a GPR
+- [x] Write the sum-of-odds program and run it
+- [x] Add a custom `out rs` instruction driving a seven-segment display
 - [ ] Separate data path from control logic; fill in the control-signal table
 
 ### [F6 - A Fully Functional Mini RISC-V Processor (minirv)](https://ysyx.oscc.cc/docs/en/2407/f/6.html)
@@ -125,6 +125,7 @@ Sequential blocks
 - [ ] Run `vga.hex` (628,000 cycles, 1-2 hours) and get the OSOC logo on screen
 - [ ] Write up why Logisim doesn't scale: design effort, simulation speed, debuggability
 
-![Information Box Description](assets/sav.png)
+<!-- ![Information Box Description](assets/sav.png) -->
+<img src="assets/sav.png" width="400">
 
 Let's get to the grind)
