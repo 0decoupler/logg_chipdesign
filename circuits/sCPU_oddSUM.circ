@@ -260,9 +260,9 @@
       <a name="max" val="0x7"/>
       <a name="width" val="3"/>
     </comp>
-    <comp lib="9" loc="(1464,570)" name="Text">
-      <a name="font" val="SansSerif bold 24"/>
-      <a name="text" val="suiiiii, r2val = 55"/>
+    <comp lib="9" loc="(1479,569)" name="Text">
+      <a name="color" val="#de0005"/>
+      <a name="text" val="odd SUM = 25, workss"/>
     </comp>
     <wire from="(1030,530)" to="(1040,530)"/>
     <wire from="(1060,160)" to="(1060,330)"/>
