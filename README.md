@@ -108,7 +108,7 @@ Sequential blocks
 - [ ] Separate data path from control logic; fill in the control-signal table
 
 ### [F6 - A Fully Functional Mini RISC-V Processor (minirv)](https://ysyx.oscc.cc/docs/en/2407/f/6.html)
-- [ ] RTFM the RISC-V spec: PC width, GPR count/width, role of `x0`, instruction formats, RV32I vs RV32E
+- [x] RTFM the RISC-V spec: PC width, GPR count/width, role of `x0`, instruction formats, RV32I vs RV32E
 - [ ] minirv spec: RV32E register count, 8 instructions - `add`, `addi`, `lui`, `lw`, `lbu`, `sw`, `sb`, `jalr`
 - [ ] Decode by comparator on `inst[6:0]` and `inst[14:12]` rather than a full decoder
 - [ ] Immediate handling: zero-extend vs sign-extend, Bit Extender component
