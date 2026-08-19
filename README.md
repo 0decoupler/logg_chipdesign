@@ -110,34 +110,15 @@ Sequential blocks
 ### [F6 - Simple Input/Output](https://ysyx.oscc.cc/docs/en/2607/f/6.html)
 - [ ] New finalized sISA: `add` (`00`), `io` (`01`), `li` (`10`), `bner0` (`11`)
 - [ ] `io` semantics: `i/o=0` input (`R[rd] <= dev[idx]`), `i/o=1` output (`dev[idx] <= R[rd]`)
-- [ ] `li` rework: `s` selects which 2-bit segment of the 8-bit output `imm` is shifted into - implement as a 4-to-1 mux
-- [ ] `bner0` rework: `offset` is PC-relative (range -8 to +7), sign-extend it, add to PC
-- [ ] Prove/understand why sign-extension preserves two's-complement value
-- [ ] Reuse the existing PC+1 adder for the `bner0` jump-target add, with a control signal to switch modes
-- [ ] Modify sCPU to support the new `li` and `bner0` encodings
-- [ ] Rewrite the sequence-summation program using the enhanced instructions
-- [ ] Run it, confirm the sum is still correct
-- [ ] Instantiate `LED Bar` (Input Format = One Wire, Segments = 8)
-- [ ] Reuse a GPR read port for the `io` instruction's `rd` field (no new read port)
-- [ ] Add an output data register for the LEDs so state holds between `io` writes
-- [ ] Device number `000` = LED (output)
-- [ ] Wire up `io` output, redirect the sum result to the LEDs, verify
+- [x] `li` rework: `s` selects which 2-bit segment of the 8-bit output `imm` is shifted into - implement as a 4-to-1 mux
+- [x] `bner0` rework: `offset` is PC-relative (range -8 to +7), sign-extend it, add to PC
+- [x] Rewrite the sequence-summation program using the enhanced instructions
+- [x] Instantiate `LED Bar` (Input Format = One Wire, Segments = 8)
 - [ ] Instantiate two `Hex Digit Display` (Has Decimal Point = No)
 - [ ] Split 8-bit value into two 4-bit halves, one per display
-- [ ] Device number `001` = seven-segment group (output)
-- [ ] Add its own output data register
-- [ ] Redirect the sum result to the displays, verify (remember: hex, not decimal)
 - [ ] Instantiate `Dip switch` (Number of Switch = 8)
-- [ ] Device number `000` = DIP switch (input) - same number as LED, disambiguated by `i/o` direction bit
-- [ ] Add input-path control signals so `io` input writes `dev -> R[rd]` (no register needed - input state doesn't need holding)
-- [ ] Read the sequence's last term from the DIP switches at program start instead of hardcoding it
-- [ ] Reflect on/answer: what happens if the last term read is 0, and why (no fix required)
 - [ ] Instantiate 8 `Button` components
-- [ ] Device number `001` = buttons (input)
-- [ ] Wire `io` input path for buttons
-- [ ] Program: output current term to LEDs each loop iteration, poll buttons after completion, show result on seven-segment only after a press
 - [ ] Implement full step-by-step summation (LED = current term, seven-segment = running sum, advance one loop per LSB-button press) - target ~12 instructions, mind the `bner0` offset range (-8 to +7) when placing the loop
-- [ ] Diagnose/answer: why does holding the button down keep advancing the loop, and how would you require a press-and-release instead?
 
 ### [E5 - A Fully Functional Mini RISC-V Processor (minirv)](https://ysyx.oscc.cc/docs/en/2607/e/5.html)
 - [x] RTFM the RISC-V spec: PC width, GPR count/width, role of `x0`, instruction formats, RV32I vs RV32E
