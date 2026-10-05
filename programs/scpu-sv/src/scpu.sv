@@ -11,7 +11,7 @@
 module ff #(parameter int W = 8) (
     input  logic clk, rst, en, 
     input  logic [W-1:0] d,
-    logic [W-1:0] q
+    output logic [W-1:0] q
 );
 
     always_ff @(posedge clk) begin
@@ -27,7 +27,7 @@ module counter (
     output logic [3:0] pc_out
     );
 
-    assign pc_out = 3'b000;
+    // err: assign pc_out = 3'b000;
     always_ff @(posedge clk) begin
         if (rst) pc_out <= '0;
         else if (trigger) pc_out <= pc_out - offset;
@@ -47,22 +47,27 @@ module scpu (
     logic [1:0] op, rd, rs1, rs2, s, imm;
     logic [3:0] off;
     assign op  = instr[7:6];
-    assign rd  = instr[5:4], {rs1, s} = instr[3:2], {rs2, imm} = instr[1:0];
+    // err: assign rd  = instr[5:4], {rs1, s} = instr[3:2], {rs2, imm} = instr[1:0];
+    assign rs1 = instr[3:2];
+    assign s   = instr[3:2];
+    assign rs2 = instr[1:0];
+    assign imm = isntr[1:0];
+    assign off = instr[5:2]; // +: forgot
     //assign s   = instr[3:2], imm = instr[
     
     logic [7:0] src1, src2;
     always_comb begin
         case (rs1)
-            d2: src1 = r1;
-            d3: src1 = r2;
-            d4: src1 = r3;
+            2'd1: src1 = r1; // err: d2 -> 2'd2
+            2'd2: src1 = r2;
+            2'd3: src1 = r3;
             default: src1 = r0;
         endcase
         case(rs2) 
-            d2: src2 = r1;
-            d3: src2 = r2;
-            d4: src2 = r3;
-            default: src1 = r0;
+            default: src2 = r0; //oops sr1 -> src2
+            2'd1: src2 = r1;
+            2'd2: src2 = r2;
+            2'd3: src2 = r3;
         endcase
     end
 
@@ -79,10 +84,10 @@ module scpu (
     //logic i = (4'b0001 << rd)
     always_comb begin
         case (rd) 
-            d1: wr0 = 1;
-            d2: wr1 = 1;
-            d3: wr2 = 1;
-            default: wr3 = 1;
+            2'd1: wr0 = 1'b1;
+            2'd2: wr1 = 1'b1;
+            2'd3: wr2 = 1'b1;
+            default: wr3 = 1'b1;
         endcase
     end
     
