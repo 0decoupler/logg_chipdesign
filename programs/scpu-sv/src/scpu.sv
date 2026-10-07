@@ -29,16 +29,16 @@ module counter (
 
     // err: assign pc_out = 3'b000;
     always_ff @(posedge clk) begin
-        if (rst) pc_out <= '0;
-        else if (trigger) pc_out <= pc_out - offset;
-        else pc_out <= pc_out + 1;
+        if (rst) ff #(4) pc (clk, rst, 1, '0, pc_out);
+        else if (trigger) ff #(4) pc (clk, rst, 1, pc - off, pc_out);
+        else ff #(4) pc (clk, rst, 1, pc + 1, pc_out);
     end
 endmodule
 
 
 module scpu (
     input  logic clk, rst, en,
-    output logic [3:0] pc,
+    output logic [3:0] pc_out,
     output logic [7:0] r0, r1, r2, r3
 );
     logic [7:0] instr;
@@ -51,17 +51,17 @@ module scpu (
     assign rs1 = instr[3:2];
     assign s   = instr[3:2];
     assign rs2 = instr[1:0];
-    assign imm = isntr[1:0];
+    assign imm = {6'b0, instr[1:0]};
     assign off = instr[5:2]; // +: forgot
     //assign s   = instr[3:2], imm = instr[
     
     logic [7:0] src1, src2;
     always_comb begin
         case (rs1)
+            default: src1 = r0;
             2'd1: src1 = r1; // err: d2 -> 2'd2
             2'd2: src1 = r2;
             2'd3: src1 = r3;
-            default: src1 = r0;
         endcase
         case(rs2) 
             default: src2 = r0; //oops sr1 -> src2
@@ -71,32 +71,27 @@ module scpu (
         endcase
     end
 
-    wire logic [7:0] sum, li_val, wdata;
+    logic [7:0] sum, li_val, wdata;
+    assign take_br = (op == 2'b11) && (src2 != r0);
     always_comb begin
         case(op)
             2'b00: wdata = src1 + src2;
-            2'b10: wdata = imm << (s << 1);
-            2'b11: if (src2 != r0)
-            default: wdata = '0;
+            2'b10: wdata = imm << (s << 1); // note: 8'b10 << (2'b11 << 1) but result in 8bits -> 8'b1000_0000
+            // no need, declared before with take_br: 2'b11: if (src2 != r0) 
+            default: wdata = 8'b0;
         endcase
     end 
 
-    //logic i = (4'b0001 << rd)
-    always_comb begin
-        case (rd) 
-            2'd1: wr0 = 1'b1;
-            2'd2: wr1 = 1'b1;
-            2'd3: wr2 = 1'b1;
-            default: wr3 = 1'b1;
-        endcase
-    end
+    logic [3:0] wr;
+    assign we = en && (op == 2'b10 || op == 2'b00);
+    assign wr = we ? (4'b0001 << rd) : 4'b0000; // turns out it was good idea
     
-    ff #(8) r0 (clk, rst, we & wr0, wdata, r0); 
-    ff #(8) r1 (clk, rst, we & wr1, wdata, r1);
-    ff #(8) r2 (clk, rst, we & wr2, wdata, r2);
-    ff #(8) r3 (clk, rst, we & wr3, wdata, r3);
+    ff #(8) u_r0 (clk, rst, wr == 1, wdata, r0); 
+    ff #(8) u_r1 (clk, rst, wr == 2, wdata, r1);
+    ff #(8) u_r2 (clk, rst, wr == 3, wdata, r2);
+    ff #(8) u_r3 (clk, rst, wr == 4, wdata, r3);
 
-    counter pc (clk, rst, trigger, off, pc_out);
+    counter pc (clk, rst, take_br, off, pc_out);
 
 
 endmodule    
