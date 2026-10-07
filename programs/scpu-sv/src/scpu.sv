@@ -20,25 +20,23 @@ module scpu (
     logic [1:0] op, rd, rs1, rs2, s, imm;
     logic [3:0] off;
     assign op  = instr[7:6];
-    // err: assign rd  = instr[5:4], {rs1, s} = instr[3:2], {rs2, imm} = instr[1:0];
-    assign rd = instr[5:4]; // bruh, why didnt i add that
+    assign rd = instr[5:4]; 
     assign rs1 = instr[3:2];
     assign s   = instr[3:2];
     assign rs2 = instr[1:0];
     assign imm = instr[1:0];
-    assign off = instr[5:2]; // +: forgot
-    //assign s   = instr[3:2], imm = instr[
+    assign off = instr[5:2]; 
     
     logic [7:0] src1, src2;
     always_comb begin
         case (rs1)
             default: src1 = r0;
-            2'd1: src1 = r1; // err: d2 -> 2'd2
+            2'd1: src1 = r1; 
             2'd2: src1 = r2;
             2'd3: src1 = r3;
         endcase
         case(rs2) 
-            default: src2 = r0; //oops sr1 -> src2
+            default: src2 = r0; 
             2'd1: src2 = r1;
             2'd2: src2 = r2;
             2'd3: src2 = r3;
@@ -51,34 +49,23 @@ module scpu (
     always_comb begin
         case(op)
             2'b00: wdata = src1 + src2;
-            2'b10: wdata = {6'b0, imm} << {s, 1'b0}; // note: 8'b10 << (2'b11 << 1) but result in 8bits -> 8'b1000_0000
-            // no need, declared before with take_br: 2'b11: if (src2 != r0) 
-            // bro whatta the {s, 1'b0} how is that equivalent to
-            // (s << 1)????
+            2'b10: wdata = {6'b0, imm} << {s, 1'b0};
             default: wdata = 8'b0;
         endcase
     end 
 
     logic [3:0] wr;
     assign we = en && (op == 2'b10 || op == 2'b00);
-    assign wr = we ? (4'b0001 << rd) : 4'b0000; // turns out it was good idea
-    
-    ff #(8) u_r0 (clk, rst, wr[0], wdata, r0); 
-    ff #(8) u_r1 (clk, rst, wr[1], wdata, r1);
-    ff #(8) u_r2 (clk, rst, wr[2], wdata, r2);
-    ff #(8) u_r3 (clk, rst, wr[3], wdata, r3);
+    assign wr = we ? (4'b0001 << rd) : 4'b0000; 
 
-    counter u_pc (clk, rst, take_br, off, pc);
+    ff #(8) u_r0 (.clk(clk), .rst(rst), .en(wr[0]), .d(wdata), .q(r0)); 
+    ff #(8) u_r1 (.clk(clk), .rst(rst), .en(wr[1]), .d(wdata), .q(r1));
+    ff #(8) u_r2 (.clk(clk), .rst(rst), .en(wr[2]), .d(wdata), .q(r2));
+    ff #(8) u_r3 (.clk(clk), .rst(rst), .en(wr[3]), .d(wdata), .q(r3));
+
+    counter u_pc (.clk(clk), .rst(rst), .trigger(take_br), .offset(off), .pc_out(pc));
 
 endmodule    
-
-
-
-
-
-
-
-
 
 
 

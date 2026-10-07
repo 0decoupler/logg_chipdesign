@@ -3,7 +3,7 @@
 module counter (
     input  logic clk, rst,
     input  logic trigger,
-    input  logic signed [3:0] offset,
+    input  logic [3:0] offset,
     output logic [3:0] pc_out
     );
 
